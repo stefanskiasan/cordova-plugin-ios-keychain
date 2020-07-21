@@ -4,6 +4,14 @@ created by Shazron Abdullah
 
 Updated by Max Lynch <max@ionic.io>
 
+_Maintenance Status_:
+
+Looking for maintainer. PRs and community contributions welcome.
+
+### Alternative: Enterprise Keychain and Keystore
+
+For enterprise use cases requiring secret storage with biometric authentication for iOS (keychain) and Android (Keystore), see [Identity Vault](https://ionicframework.com/enterprise/identity-vault).
+
 ### Installation
 
 ```shell
