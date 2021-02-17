@@ -77,6 +77,13 @@
     NSDictionary *query = [self queryFetchOneByKey:key message:message];
     CFTypeRef data = nil;
     OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)query, &data);
+
+    if(status == errSecUserCanceled){
+        NSString* str = @"#UserCancel#";
+        NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
+        return data;
+    }
+
     if (status != errSecSuccess) {
         if(err != nil) {
             *err = [NSError errorWithDomain:A0ErrorDomain code:status userInfo:@{NSLocalizedDescriptionKey : [self stringForSecStatus:status]}];
